@@ -18,7 +18,6 @@ test:
 	npm pack
 	mkdir -p nodejs/node_modules/@sparticuz/chromium/
 	tar --directory nodejs/node_modules/@sparticuz/chromium/ --extract --file sparticuz-chromium-*.tgz --strip-components=1
-	npx clean-modules --directory nodejs "**/*.d.ts" "**/@types/**" "**/*.@(yaml|yml)" --yes
 	rm sparticuz-chromium-*.tgz
 	mkdir -p $(dir $@)
 	zip -9 --filesync --move --recurse-paths $@ nodejs
